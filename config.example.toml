@@ -1,8 +1,8 @@
 # Wocabee Bot Configuration
 # Please edit the following settings according to your needs. Make sure to keep the structure of the file intact.
-# If you do not wish to use ntfy, simple leave it empty or remove the ntfy_server, ntfy_topic and ntfy_token settings.
+# If you do not wish to use ntfy, simply leave ntfy_server, ntfy_topic and ntfy_token empty.
 # Note: The wordlist_file and picture_file should be in JSON format, with the structure defined in the documentation.
-# 
+#
 # Base URL of the target application
 urlbase = "https://wocabee.app/app"
 
@@ -15,19 +15,27 @@ wordlist_file = "wordlist.json"
 # Path to picture mapping file (JSON format)
 picture_file = "picturelist.json"
 
-# Words to skip/ignore during translation, dont change this unless you know what you are doing
+# Words to skip/ignore during translation, don't change this unless you know what you are doing
 placeholder_words = ["", "translate", "check"]
 
-# These variables are for controlling which class and package is automatically clicked on startup
+# Set this to true to automatically complete ALL required homework packages in the class
+complete_all_required = true
+
+# These variables control which class and package are automatically clicked on startup
+# (package_index is only used when complete_all_required = false)
 class_index = 0
 package_index = 0
 
-# These variables control how many points the bot should reach before stopping, and when to send milestone reminders
-addon_points = 1000
-milestone_reminder = 10
+# These variables control how many points the bot should reach before stopping (-1 for unlimited)
+# (ignored when complete_all_required = true)
+addon_points = -1
+milestone_reminder = 100
 
-# This variable is used to determine if this is supposed to be ran as headless or not
-headless = true
+# Set to false to watch the browser window live (maximized), or true to run in the background
+headless = false
+
+# Automatically learn unknown words without prompting in the terminal
+auto_learn = true
 
 # Make this true if you want to have double points enabled by default
 double_points = false
@@ -36,7 +44,7 @@ double_points = false
 username = "username_here"
 password = "password_here"
 
-# NTFY notification settings
-ntfy_server = "https://example.ntfy.server"
-ntfy_topic = "wocabee-bot"
-ntfy_token = "secret_token_here"
+# NTFY notification settings (leave empty if not using ntfy)
+ntfy_server = ""
+ntfy_topic = ""
+ntfy_token = ""

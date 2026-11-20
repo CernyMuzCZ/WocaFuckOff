@@ -4,6 +4,12 @@ config.toml
 # Local files needed for functioning locally or smthing idk
 .vscode
 .venv
+__pycache__/
+*.pyc
+
+# Debug screenshots and HTML dumps (may contain personal session data)
+dump/
+debug_*.png
 
 # Optional: env files
 .env
